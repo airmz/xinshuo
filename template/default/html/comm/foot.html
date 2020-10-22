@@ -1,0 +1,93 @@
+<!--
+ * @Author: airmz
+ * @Date: 2020-09-29 14:23:01
+ * @LastEditTime: 2020-09-30 09:39:29
+ * @FilePath: \az-jnxinshuo.com\template\default\html\comm\foot.html
+-->
+<!-- 导航 -->
+<div class="bb_nav">
+    <div class="bb_nav_c">
+        <ul>
+            <li> <a href="/">网站首页</a> </li>
+            {pboot:nav}
+            <li> <a href="[nav:link]">[nav:name]</a> </li>
+            {/pboot:nav}
+        </ul>
+        <span></span>
+    </div>
+</div>
+<div class="footer_c">
+    <div class="footer">
+        <div class="links">
+            <span>友情链接：</span>
+            {pboot:link gid=1 num=3}
+            <a href="[link:link]" title="[link:name]">[link:name]</a>
+            {/pboot:link}
+        </div>
+        <div class="f_content"> 地址：{pboot:companyaddress} &nbsp;电话：+{pboot:companyphone}&nbsp;传真：+{pboot:companyfax}
+            <br />
+            技术支持：<a href="www.xx160211.cn" target="_blank" title="">Airmz</a>&nbsp;
+            {pboot:sitecopyright}
+        </div>
+        <div class="i_map fr">
+            <span>网站地图</span> (<a href="" title="xml">xml</a>/ <a href="" title="html">html</a>)
+        </div>
+        <div class="c"></div>
+    </div>
+</div>
+<div class="side_nav">
+    <ul>
+        <li class="QQ"> <a href="tencent://message/?uin=329435596&Site=qq&Menu=yes" title="在线咨询"> <span>在线咨询</span> </a>
+        </li>
+        <li class="sub_QR"> <a href="javascript:;"> <span><img src="{pboot:companyweixin}" /></span> </a> </li>
+        <li class="back_top"> <a href="#" title="返回顶部"> <span>返回顶部</span> </a> </li>
+    </ul>
+    <div class="c"></div>
+</div>
+
+
+
+<script src="{pboot:sitetplpath}/js/popper.min.js"></script>
+<script src="{pboot:sitetplpath}/bootstrap/js/bootstrap.min.js"></script>
+<script src="{pboot:sitetplpath}/js/wow.min.js"></script>
+<script src="{pboot:sitetplpath}/js/aoyun.js?v=v1.2.2"></script>
+<script>
+    //ajax提交表单
+    function subform(obj) {
+        var url = '{pboot:form fcode=2}';
+        var tel = $(obj).find("#tel").val();
+
+        var reg = /^(1|0)[\d\-]+$/;
+        if (!reg.test(tel)) {
+            alert('电话号码错误！');
+            return false;
+        }
+
+        $.ajax({
+            type: 'POST',
+            url: url,
+            dataType: 'json',
+            data: {
+                tel: tel
+            },
+            success: function (response, status) {
+                if (response.code) {
+                    alert("您的来电已收到，我们会尽快联系您！");
+                    $(obj)[0].reset();
+                } else {
+                    alert(response.data);
+                }
+            },
+            error: function (xhr, status, error) {
+                alert('返回数据异常！');
+            }
+        });
+        return false;
+    }
+</script>
+
+{pboot:sitestatistical}
+
+</body>
+
+</html>

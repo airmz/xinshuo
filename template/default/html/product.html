@@ -1,0 +1,98 @@
+<!--
+ * @Author: airmz
+ * @Date: 2020-09-29 14:23:01
+ * @LastEditTime: 2020-09-30 14:59:09
+ * @FilePath: \az-jnxinshuo.com\template\default\html\product.html
+-->
+{include file=comm/head.html}
+
+{include file=comm/tab-nav.html}
+
+<div class="container pages">
+
+	<div class="sp_content" id="contentRight">
+		<div class="content_com_title">
+			<h2>{content:title}</h2>
+			<div class="bread"> {include file=comm/position.html}</div>
+		</div>
+		<div class="content">
+			<div class="view">
+				<h1 class="view-title">{content:title}</h1>
+				<div class="view-date"> <span>发布时间：{content:date style=Y-m-d}</span>
+					<span>点击量：{content:visits operate=+1000}
+						<span id="clicksArea">
+							<script src="" type='text/javascript' language="javascript"></script>
+						</span>
+					</span>
+				</div>
+				<div class="boxcen">
+					<div style="text-align: center;">
+						{content:content}
+					</div>
+				</div>
+				<div class="page">
+					<p>上一篇：<a href='/products/nongyongpashanwang/2020/0824/87.html'>{content:precontent}</a> </p>
+					<p>下一篇：<a href='/products/nongyongpashanwang/2020/0824/87.html'>{content:nextcontent}</a> </p>
+					<a href="javascript:void(0);" title="返回" class="back" onClick="javascript:history.back(-1);">返回</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+
+
+<script src="{pboot:sitetplpath}/swiper-4.3.5/js/swiper.min.js"></script>
+<script>
+	var viewSwiper = new Swiper('.view .swiper-container', {
+		on: {
+			slideChangeTransitionStart: function () {
+				updateNavPosition()
+			}
+		}
+	})
+
+	$('.view .arrow-left,.preview .arrow-left').on('click', function (e) {
+		e.preventDefault()
+		if (viewSwiper.activeIndex == 0) {
+			viewSwiper.slideTo(viewSwiper.slides.length - 1, 1000);
+			return
+		}
+		viewSwiper.slidePrev()
+	})
+	$('.view .arrow-right,.preview .arrow-right').on('click', function (e) {
+		e.preventDefault()
+		if (viewSwiper.activeIndex == viewSwiper.slides.length - 1) {
+			viewSwiper.slideTo(0, 1000);
+			return
+		}
+		viewSwiper.slideNext()
+	})
+
+	var previewSwiper = new Swiper('.preview .swiper-container', {
+		//visibilityFullFit: true,
+		slidesPerView: 'auto',
+		allowTouchMove: false,
+		on: {
+			tap: function () {
+				viewSwiper.slideTo(previewSwiper.clickedIndex)
+			}
+		}
+	})
+
+	function updateNavPosition() {
+		$('.preview .active-nav').removeClass('active-nav')
+		var activeNav = $('.preview .swiper-slide').eq(viewSwiper.activeIndex).addClass('active-nav')
+		if (!activeNav.hasClass('swiper-slide-visible')) {
+			if (activeNav.index() > previewSwiper.activeIndex) {
+				var thumbsPerNav = Math.floor(previewSwiper.width / activeNav.width()) - 1
+				previewSwiper.slideTo(activeNav.index() - thumbsPerNav)
+			} else {
+				previewSwiper.slideTo(activeNav.index())
+			}
+		}
+	}
+</script>
+
+{include file=comm/foot.html}

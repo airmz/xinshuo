@@ -1,0 +1,43 @@
+<!--
+ * @Author: airmz
+ * @Date: 2020-10-06 14:28:12
+ * @LastEditTime: 2020-10-06 15:16:31
+ * @FilePath: \az-jnxinshuo.com\template\default\wap\html\product.html
+-->
+{include file=comm/head.html}
+<div class="allpage">
+    <div class="black-fixed commonfont">&#xe607;</div>
+    <div class="header">
+        <div class="head"> <a href="index.php" title="返回列表" class="home-btn commonfont">&#xe609;</a>
+            <p class="top-title">{content:sortname}</p>
+            <div class="class-btn"><span class="commonfont">&#xe60a;</span></div>
+            <div class="nav-btn commonfont">&#xe60b;</div>
+        </div>
+        <div class="type">
+            <h1>搜索：</h1>
+            <div class="common-pro-search">
+                <form class="am-topbar-form am-topbar-left am-form-inline am-topbar-right" role="search"
+                    action="{dede:global.cfg_cmsurl/}/plus/search.php">
+                    <input type="hidden" name="mobile" value="1" />
+                    <input type="hidden" name="kwtype" value="0" />
+                    <input type="text" class="common-text" name="q" placeholder="请输入搜索关键词" />
+                    <input type="submit" class="common-submit commonfont" value="&#xe602;" />
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <div class="content">
+        <div class="about">
+            <h1>{content:title}</h1>
+            <span class="picContent">
+                <p>{content:content}</p>
+            </span>
+            {content:precontent} {content:nextcontent}
+            <a href="{content:sortlink}" title="返回列表" class="back">返回列表</a>
+
+        </div>
+    </div>
+    {dede:include filename="footer_m.htm"/}
+</div>
+{include file=comm/foot.html}

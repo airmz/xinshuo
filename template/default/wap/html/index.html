@@ -1,0 +1,238 @@
+{include file=comm/head.html}
+<div class="allpage">
+    <div class="black-fixed iconfont">&#xe60f;</div>
+    <div class="header">
+        <div class="head">
+            <a href="/" title="{pboot:sitetitle}" class="logo">
+                <img src="/template/default/wap/images/logo_03.png" alt="{dede:global.cfg_webname/}" />
+            </a>
+            <div class="search_hl iconfont">&#xe600;</div>
+            <div class="nav-btn iconfont">&#xe605;</div>
+            <div class="search_hl iconfont">&#xe600;</div>
+            <div class="search" style="display: block;">
+                <form class="am-topbar-form am-topbar-left am-form-inline am-topbar-right" role="search"
+                    action="{dede:global.cfg_cmsurl/}/plus/search.php">
+                    <input type="hidden" name="mobile" value="1" />
+                    <input type="hidden" name="kwtype" value="0" />
+                    <a class="xbtn iconfont" href="javascript:;">&#xe60f;</a>
+                    <input type="text" name="q" class="search-lh-input" placeholder="请输入搜索关键词">
+                    <input type="submit" class="search-lh-btn iconfont" value="&#xe600;">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="nav_new tpp">
+        <ul>
+            {pboot:nav num=4}
+            <li class="t1"> <a href="[nav:link]">[nav:name]</a> </li>
+            {/pboot:nav}
+        </ul>
+        <div class="c"></div>
+    </div>
+    <div class="content content_new">
+        <div class="banner">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    {pboot:slide gid=3 num=3}
+                    <div class="swiper-slide">
+                        <img src="[slide:src]" />
+                    </div>
+                    {/pboot:slide}
+                </div>
+                <!-- Add Pagination -->
+                <div class="swfra">
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+            <p class="boda">
+                <a href="{pboot:companyphone}">
+                    <font class="iconfont1">&#xe628;</font>咨询热线：+{pboot:companyphone}
+                </a>
+            </p>
+            <div class="icon_nav">
+                <ul>
+                    {pboot:nav parent=5}
+                    <li class="la1">
+                        <a href="[nav:link]">
+                            <strong class=" iconfont1_ys  ">
+                                <span>[nav:name]</span>
+                            </strong>
+                        </a>
+                    </li>
+                    {/pboot:nav}
+                    {pboot:list scode=5 num=1}
+                    <li class="la4">
+                        <a href="[list:sortlink]">
+                            <strong class=" iconfont1_ys  ">
+                                ···
+                            </strong>
+                        </a>
+                    </li>
+                    {/pboot:list}
+                </ul>
+                <div class="c"></div>
+            </div>
+            <div class="clear"></div>
+            <div class="honor_i">
+                <div class="more_i ">
+                    {pboot:list scode=5 num=1}
+                    <span>[list:sortname]</span>
+                    <a href="[list:sortlink]">查看更多</a>
+                    {/pboot:list}
+                </div>
+                <div class="clear"></div>
+                <div class="honor_i_c">
+                    <ul>
+                        {pboot:list scode=5}
+                        <li> <a href="[list:link]" title="[list:title]">
+                                <img src="[list:ico]" alt="[list:title]">
+                                <span>[list:title]</span>
+                            </a>
+                        </li>
+                        {/pboot:list}
+                    </ul>
+                    <div class="c"></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+            <div class="about_i">
+                {pboot:content id=1 }
+                <div class="more_i">
+                    <span>[content:sortname]</span>
+                    <a href="[content:link]">查看更多</a>
+                </div>
+                <div class="about_i_c"> [content:content len=200]</div>
+                <div class="clear"></div>
+                {/pboot:content}
+            </div>
+            <div class="clear"></div>
+            <div class="honor_i">
+                <div class="more_i m1">
+                    {pboot:list scode=8}
+                    <span>[list:sortname]</span>
+                    <a href="[list:sortlink]">查看更多</a>
+                    {/pboot:list}
+                </div>
+                <div class="clear"></div>
+                <div class="honor_i_c">
+                    <ul>
+                        {pboot:list scode=8}
+                        <li>
+                            <a href="[list:link]" title="[list:title]">
+                                <img src="[list:ico]" alt="[list:title]">
+                                <label>[list:title]</label>
+                            </a>
+                        </li>
+                        {/pboot:list}
+                    </ul>
+                    <div class="c"></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="case_i">
+                {pboot:list scode=3 num=1}
+                <div class="more_i">
+                    <span>[list:sortname]</span>
+                    <a href="[list:sortlink]">查看更多</a>
+                </div>
+                {/pboot:list}
+                <div class="clear"></div>
+                <div class="case_i_c" id="nn">
+                    <ul>
+                        {pboot:list scode=3}
+                        <li> <a href="[list:link]" title="[list:title]">
+                                <span class="iconfont">&#xe609;</span>
+                                <h2>[list:title]</h2>
+                            </a> </li>
+                        {/pboot:list}
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="honor_i">
+                {pboot:list scode=8}
+                <div class="more_i m3">
+                    <span>[list:sortname]</span>
+                    <a href="[list:link]">查看更多</a>
+                </div>
+                {/pboot:list}
+                <div class="clear"></div>
+                <div class="honor_i_h">
+                    <ul>
+                        {pboot:list scode=8}
+                        <li>
+                            <a href="[list:link]" title="[list:title]">
+                                <img src="[list:ico]" alt="[list:title]">
+                                <span>[list:title]</span>
+                            </a>
+                        </li>
+                        {/pboot:list}
+                    </ul>
+                    <div class="c"></div>
+                </div>
+            </div>
+            <div class="case_i">
+                {pboot:list scode=4 num=1}
+                <div class="more_i">
+                    <span>[list:sortname]</span>
+                    <a href="[list:link]">查看更多</a>
+                </div>
+                {/pboot:list}
+                <div class="clear"></div>
+                <div class="youhui">
+                    {pboot:list scode=4 num=1}
+                    <a href="[list:link]">
+                        <label>> [list:title]</label>
+                        <div class="yright">
+                            <img src="[list:ico]" />
+                            <span>　　[list:content len=50]</span>
+                        </div>
+                    </a>
+                    {/pboot:list}
+                    <div class="c"></div>
+                </div>
+                <div class="clear"></div>
+                <div class="case_i_c" id="nn1">
+                    <ul>
+                        {pboot:list scode=4}
+                        <li> <a href="[list:link]">
+                                <span class="iconfont">&#xe609;</span>
+                                <h2>[list:title]</h2>
+                            </a> </li>
+                        {/pboot:list}
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <!-- <div class="honor_i"> {dede:type typeid='10'}
+                <div class="more_i m3"> <span>[field:typename/]</span><a href="list.php?tid=[field:id/]">查看更多</a>
+                </div>
+                {/dede:type}
+                <div class="clear"></div>
+                <div class="honor_i_h">
+                    <ul>
+                        {dede:arclist typeid='10' row='3' titlelen='50' orderby='pubdate'}
+                        <li> <a href="view.php?aid=[field:id/]" title="[field:title/]"> <img src="[field:picname/]"
+                                    alt="[field:title/]"> </a> </li>
+                        {/dede:arclist}
+                    </ul>
+                    <div class="c"></div>
+                </div>
+            </div> -->
+            <div class="baomingfra">
+                <div class="baoming">
+                    <div class="left"><span>
+                            <font class="iconfont1">&#xe628;</font>咨询热线：+{pboot:companyphone}
+                        </span></div>
+                    <div class="right"> <span>地址：{pboot:companyaddress}</span> </div>
+                    <div class="c"></div>
+                </div>
+            </div>
+
+        </div>
+        {include file=comm/foot.html}
+    </div>
+    </body>
+
+    </html>

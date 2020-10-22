@@ -1,0 +1,350 @@
+{include file=comm/head.html}
+<script src="{pboot:sitetplpath}/js/index.js"></script>
+<!-- 幻灯片 -->
+<div id="slideBox" class="slideBox">
+  <div class="hd">
+    <div>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+  </div>
+  <div class="bd">
+
+    <ul>
+      {pboot:slide gid=1 num=3}
+      <li><img src="[slide:src]" /></li>
+      {/pboot:slide}
+    </ul>
+  </div>
+</div>
+<!-- 网站公告 -->
+<div class="h_mid_news_c_nnbg">
+  <div class="h_mid_news_c_nn">
+    <div class="txtMarquee-left">
+      <div class="hd"> <a class="next"></a> <a class="prev"></a> </div>
+      <div class="pgcnm fl">网站公告：</div>
+      <div class="bd fl">
+        <ul class="infoList">
+          {pboot:list scode=2}
+          <li><a href="[list:link]">[list:title]</a></li>
+          {/pboot:list}
+        </ul>
+      </div>
+      <div class="c"></div>
+    </div>
+  </div>
+</div>
+<!-- 产品展示 -->
+<div class="fourcols">
+  <ul>
+    {pboot:list scode=5 num=3 }
+    <li>
+      <a href="[list:link]" title="[list:title]">
+        <div class="img"><img src="[list:ico]" alt="[list:title]" /></div>
+        <div class="title">[list:title]</div>
+      </a>
+    </li>
+    {/pboot:list}
+    {pboot:sort scode=5}
+    <li>
+      <a href="[sort:link]" title="查看更多">
+        <div class="imgb"><img src="/template/default/images/001454_01.jpg" alt="查看更多" /></div>
+        <div class="title">查看更多</div>
+      </a>
+    </li>
+    {/pboot:sort}
+  </ul>
+</div>
+<!-- 关于我们 -->
+<div class="abme_bg">
+  <div class="title">
+    <div>关于我们</div>
+  </div>
+
+  <div class="text">
+
+    <div class="title">{pboot:companyname}</div>
+    {pboot:content id=1 lencn=50 }
+    <a href="[content:link]" target="_blank" title="查看详细" class="more">查看详细</a>
+
+    <div class="msg">[content:content]...</div>
+    {/pboot:content}
+  </div>
+
+  <div class="img atm_mid"></div>
+  <script type="text/javascript">
+    var atmdateD = [{
+      "is_url": "0",
+      "url_controller": "",
+      "url_action": "",
+      "url_para": "",
+      "pic_path": "/static\/images\/about.jpg",
+      "title": "aboutus",
+      "href": "",
+      "url": "\/static\/images\/about.jpg"
+    }];
+    $(document).ready(function () {
+      var bannerShow = new Atm();
+      bannerShow.randomPic(atmdateD, ".atm_mid", "348", "228");
+    });
+  </script>
+</div>
+<!-- 产品中心 -->
+<div class="product">
+  <div class="head">
+    <div class="w_980">
+      <div class="title_b">
+        <div class="a">产品中心</div>
+        <div class="b">PRODUCT CENTER</div>
+      </div>
+      <!-- search -->
+      <div class="search">
+        <form name="formsearch" action="{dede:global.cfg_cmsurl/}/plus/search.php">
+          <input type="hidden" name="kwtype" value="0" />
+          <div class="s_c">
+            <input type="text" name="q" id="q" value="" class="search_text" placeholder="请输入关键词！" />
+          </div>
+          <input type="submit" name="submit" id="" value=" " class="search_submit" />
+        </form>
+      </div>
+      <!-- search end -->
+      <div class="phone_b">
+        <div>
+          <div class="msg">SERVICE PHONE</div>
+          <div class="num">+{pboot:companyphone}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 产品展示 -->
+  <div class="cont">
+
+    <ul class="lnav">
+      {pboot:nav parent=5 }
+      <li class='hover'>
+        <a><span>[nav:name]</span></a>
+      </li>
+      {/pboot:nav}
+    </ul>
+    <!-- 列表 -->
+    {include file=comm/porduct.html}
+
+  </div>
+
+</div>
+<!-- 新闻资讯 -->
+<div class="product">
+  <div class="head">
+    <div class="w_980">
+      <div class="title_b">
+        <div class="a">新闻资讯</div>
+        <div class="b">News Center</div>
+      </div>
+      <!-- search -->
+      <div class="search">
+        <form name="formsearch" action="{pboot:scaction}">
+          <input type="hidden" name="kwtype" value="0" />
+          <div class="s_c">
+            <input type="text" name="q" id="q" value="" class="search_text" placeholder="请输入关键词！" />
+          </div>
+          <input type="submit" name="submit" id="" value=" " class="search_submit" />
+        </form>
+      </div>
+      <!-- search end -->
+      <div class="phone_b">
+        <div>
+          <div class="msg">SERVICE PHONE</div>
+          <div class="num">+{pboot:companyphone}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 最新资讯 -->
+  <div class="news_b">
+    <div class="head">
+      <div class="title">最新资讯</div>
+      <div class="line">
+        <div></div>
+      </div>
+      <div class="en">THE LATESET INFORMATION</div>
+      {pboot:sort scode=2 }
+      <a href="[sort:link]" title="查看详细" class="more" target="_self">查看详细</a>
+      {/pboot:sort}
+    </div>
+    <div class="w_980">
+      <div class="lnews">
+        {pboot:list scode=2 num=1 }
+        <div class="fir">
+          <div class="time">
+            <div class="day">[list:date style=d]</div>
+            <div class="year">[list:date style=Y]</div>
+          </div>
+          <div class="info">
+            <div class="title">[list:title]</div>
+            <div class="msg">[list:description]...</div>
+          </div>
+        </div>
+        {/pboot:list}
+
+        {pboot:list scode=2 num=4 }
+        <div class="item">
+          <a href="[list:link]" title="[list:title]" class="title">[list:title]</a>
+          <div class="time">[list:date style=Y-m]</div>
+        </div>
+        {/pboot:list}
+      </div>
+      <div id="rimgs" class="rimgs">
+        <div class="hd">
+          <ul>
+            <li class="on">1</li>
+            <li>2</li>
+          </ul>
+        </div>
+        <div class="bd">
+          <ul>
+            {pboot:slide gid=2 }
+            <li><a href="[slide:link]" title="[slide:title]" target="_self"><img src="[slide:src]"></a></li>
+            {/pboot:slide}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- 案例展示 -->
+    <div class="product">
+      <div class="head">
+        <div class="w_980">
+          <div class="title_b">
+            <div class="a">案例展示</div>
+            <div class="b">case presentation</div>
+          </div>
+          <!-- search -->
+          <div class="search">
+            <form name="formsearch" action="{pboot:scaction}">
+              <input type="hidden" name="kwtype" value="0" />
+              <div class="s_c">
+                <input type="text" name="q" id="q" value="" class="search_text" placeholder="请输入关键词！" />
+              </div>
+              <input type="submit" name="submit" id="" value=" " class="search_submit" />
+            </form>
+          </div>
+          <!-- search end -->
+          <div class="phone_b">
+            <div>
+              <div class="msg">SERVICE PHONE</div>
+              <div class="num">+{pboot:companyphone}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w_980">
+      <div class="oimgs">
+        <div class="imga imgh">
+          <img src="/template/default/images/6a8f90a07cd4c2db24c7a04eb4fb94c4.png" alt="案例展示" />
+          <div class="msg_bg">
+            <div class="msg_b">
+              <div class="titlea">
+                <div class="line"></div>
+                <div class="name">案例展示</div>
+                <div class="line"></div>
+              </div>
+              <div class="msg">济宁鑫硕工程机械有限公司
+                公司创始于2000年，公司通过严格的录用机制和良好的培训系统，建立了一支技术过硬、素质优良的研发、生产和售后服务的员工队伍，共同构筑了公司强大的研发实力和生产销售能力 ...</div>
+            </div>
+          </div>
+        </div>
+        <div class="case">
+          <div class="title">CASE</div>
+          <div class="msg">与我们合作的企业案例</div>
+          {pboot:sort scode=8}
+          <a href="[sort:link]" title="查看更多" class="more" target="_self">查看更多+</a>
+          {/pboot:sort}
+        </div>
+        <div class="imgb imgh"> <img src="/template/default/images/8D1BB4399B9AE3ECC7AD094D98CA8587.png" alt="案例展示" />
+          <div class="msg_bg">
+            <div class="msg_b">
+              <div class="titleb">
+                <div class="line"></div>
+                <div class="name">案例展示</div>
+                <div class="line"></div>
+              </div>
+              <div class="msg">济宁鑫硕工程机械有限公司
+                公司创始于2000年，公司通过严格的录用机制和良好的培 ...</div>
+            </div>
+          </div>
+        </div>
+        <div class="imgc imgh"> <img src="/template/default/images/1BF19AA82AA8ADE2BDA66CB7B7390F8B.png" alt="案例展示" />
+          <div class="msg_bg">
+            <div class="msg_b">
+              <div class="titleb">
+                <div class="line"></div>
+                <div class="name">案例展示</div>
+                <div class="line"></div>
+              </div>
+              <div class="msg">济宁鑫硕工程机械有限公司
+                公司创始于2000年，公司通过严格的录用机制和良好的培 ...</div>
+            </div>
+          </div>
+        </div>
+        <div class="textimg imgh"> <img src="/template/default/images/8e9e22559b7dd05046d65c6465e672a2.png"
+            alt="案例展示" />
+          <div class="msg_bg">
+            <div class="msg_b">
+              <div class="titlea">
+                <div class="line"></div>
+                <div class="name">案例展示</div>
+                <div class="line"></div>
+              </div>
+              <div class="msg">济宁鑫硕工程机械有限公司
+                公司创始于2000年，公司通过严格的录用机制和良好的培训系统，建立了一支技术过硬、素质优良的研发、生产和售后服务的员工队伍，共同构筑了公司强大的研发实力和生产销售能力 ...</div>
+            </div>
+          </div>
+        </div>
+        <div class="imgd imgh"> <img src="/template/default/images/748111E12612C94067C348534F1A4687.png" alt="案例展示" />
+          <div class="msg_bg">
+            <div class="msg_b">
+              <div class="titleb">
+                <div class="line"></div>
+                <div class="name">案例展示</div>
+                <div class="line"></div>
+              </div>
+              <div class="msg">济宁鑫硕工程机械有限公司
+                公司创始于2000年，公司通过严格的录用机制和良好的培 ...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="{pboot:sitetplpath}/swiper-4.3.5/js/swiper.min.js"></script>
+  <script>
+    var mySwiper = new Swiper('.swiper-container', {
+      direction: 'horizontal',
+      loop: true,
+      speed: 1500,
+      autoplay: {
+        delay: 3500,
+        disableOnInteraction: false
+      },
+
+
+      // 如果需要分页器
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+
+      // 如果需要前进后退按钮
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+
+    })
+  </script>
+
+  {include file=comm/foot.html}

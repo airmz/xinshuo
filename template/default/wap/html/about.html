@@ -1,0 +1,38 @@
+<!--
+ * @Author: airmz
+ * @Date: 2020-10-06 11:13:26
+ * @LastEditTime: 2020-10-06 14:13:25
+ * @FilePath: \az-jnxinshuo.com\template\default\wap\html\about.html
+-->
+{include file=comm/head.html}
+<div class="allpage">
+    <div class="black-fixed commonfont">&#xe607;</div>
+    <div class="header">
+        <div class="head"> <a href="index.php" title="首页" class="home-btn commonfont">&#xe608;</a>
+            <p class="top-title">{content:sortname}</p>
+            <div class="class-btn"><span class="commonfont">&#xe60a;</span></div>
+            <div class="nav-btn commonfont">&#xe60b;</div>
+        </div>
+        <div class="type">
+            <h1>搜索：</h1>
+            <div class="common-pro-search">
+                <form class="am-topbar-form am-topbar-left am-form-inline am-topbar-right" role="search"
+                    action="/plus/search.php">
+                    <input type="hidden" name="mobile" value="1" />
+                    <input type="hidden" name="kwtype" value="0" />
+                    <input type="text" class="common-text" name="q" placeholder="请输入搜索关键词" />
+                    <input type="submit" class="common-submit commonfont" value="&#xe602;" />
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <div class="content">
+        <div class="about"> 　　
+            <p><span style="font-size:20px;">{content:content}</span>
+            </p>
+        </div>
+    </div>
+</div>
+</div>
+{include file=comm/foot.html}

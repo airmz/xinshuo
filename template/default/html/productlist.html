@@ -1,0 +1,43 @@
+<!--
+ * @Author: airmz
+ * @Date: 2020-09-29 14:23:01
+ * @LastEditTime: 2020-09-30 14:08:14
+ * @FilePath: \az-jnxinshuo.com\template\default\html\productlist.html
+-->
+{include file=comm/head.html}
+
+{include file=comm/tab-nav.html}
+
+<!-- 产品展示 -->
+<div class="sp_content" id="contentRight">
+  <div class="content_com_title">
+    <h2>{sort:parentname}</h2>
+    <div class="bread">{include file=comm/position.html} </div>
+  </div>
+  <div class="content">
+    <ul class="product5">
+      {pboot:list}
+      <li>
+        <div>
+          <a href="[list:link]" title="[list:title]">
+            <img src="[list:ico]" alt="[list:title]" /></a>
+          <p class="pg-border-color pro5-border1"></p>
+          <p class="pg-border-color pro5-border2"></p>
+          <p class="pg-border-color pro5-border3"></p>
+          <p class="pg-border-color pro5-border4"></p>
+        </div>
+        <p><a href="[list:link]" title="[list:title]" class="pg-color">[list:title]</a></p>
+      </li>
+      {/pboot:list}
+    </ul>
+    {include file=comm/page.html}
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+{include file=comm/foot.html}

@@ -1,0 +1,82 @@
+<!--
+ * @Author: airmz
+ * @Date: 2020-09-29 14:23:01
+ * @LastEditTime: 2020-09-29 15:29:58
+ * @FilePath: \az-jnxinshuo.com\template\default\html\comm\head.html
+-->
+<!doctype html>
+<html lang="zh">
+
+<head>
+	<meta charset="utf-8">
+	<title>{pboot:pagetitle}</title>
+	<meta name="keywords" content="{pboot:pagekeywords}">
+	<meta name="description" content="{pboot:pagedescription}">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,shrink-to-fit=no">
+
+	<link rel="stylesheet" href="{pboot:sitetplpath}/css/child_atm.css">
+	<link rel="stylesheet" href="{pboot:sitetplpath}/css/child_cart.css">
+	<link rel="stylesheet" href="{pboot:sitetplpath}/css/child_from.css">
+	<link rel="stylesheet" href="{pboot:sitetplpath}/css/child_msg.css">
+	<link rel="stylesheet" href="{pboot:sitetplpath}/css/child_page.css">
+	<link rel="stylesheet" href="{pboot:sitetplpath}/css/master.css">
+	<link rel="stylesheet" href="{pboot:sitetplpath}/css/subpage.css">
+	<link rel="shortcut icon" href="{pboot:sitepath}/favicon.ico" type="image/x-icon">
+	<script src="{pboot:sitetplpath}/js/child_atm.js"></script>
+	<script src="{pboot:sitetplpath}/js/form.js"></script>
+	<script src="{pboot:sitetplpath}/js/humane.js"></script>
+	<script src="{pboot:sitetplpath}/js/jquery.js"></script>
+	<script src="{pboot:sitetplpath}/js/lihe.js"></script>
+	<script src="{pboot:sitetplpath}/js/map.js"></script>
+	<script src="{pboot:sitetplpath}/js/select_beauty.js"></script>
+	<script src="{pboot:sitetplpath}/js/superslide.js"></script>
+	<script src="{pboot:sitetplpath}/js/zoom.js"></script>
+</head>
+
+<body>
+
+	<!-- 头部导航 -->
+
+	<div class="thead">
+		<div class="w_980"> <span class="title">关键词：</span> <span>{pboot:sitekeywords}</span> </div>
+	</div>
+	</div>
+	<div class="header">
+		<!-- 顶部 -->
+		<div class="h_top_c">
+			<div class="h_top">
+				<div class="logo"> <a href="/" title="{pboot:sitetitle}"> <img src="{pboot:sitelogo}"
+							alt="{pboot:sitetitle}" /> </a> </div>
+				<div class="tel_index_top">
+					<div class="top_msg">SERVICE PHONE</div>
+					<div class="num">+{pboot:companyphone}</div>
+				</div>
+				<div class="c"></div>
+			</div>
+		</div>
+		<!-- 顶部 end-->
+		<!-- 导航 -->
+		<div class="nav_c">
+			<div class="zz_nav"></div>
+			<div class="nav">
+				<ul>
+					<li> <a href="/">网站首页</a> </li>
+					{pboot:nav}
+					<li class="{dede:field.currentstyle/}">
+						<a href="[nav:link]" title="[nav:name]">[nav:name]</a>
+						<div class="nav_dd dn">
+							{pboot:2nav parent=[nav:scode]}
+							<a href="[2nav:link]" title="[2nav:name]">[2nav:name]</a>
+							{/pboot:2nav}
+						</div>
+					</li>
+					{/pboot:nav}
+				</ul>
+			</div>
+		</div>
+		<!-- 导航 end-->
+	</div>
+
+
+	<!--占位导航栏-->
+	<!-- <div style="height:71px;" class="head-sm-height"></div> -->
